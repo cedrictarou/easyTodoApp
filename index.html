@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Practice</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  'use strict'
+  {
+    let arrary = ['aaa', 'bbb', 'ccc'];
+    let answer;
+    while (true) {
+      let answer = prompt('何をしたいですか？(1: 追加、2:削除、3:一覧表示）');
+      if (answer === null) {
+        alert('Finish!');
+        break;
+      } else {
+        switch (answer) {
+          case '1': //保存
+            const addItem = prompt('追加する値は？');
+            arrary.push(addItem);
+            console.log('Item lists', arrary);
+            break;
+          case '2': //削除
+            while (true) {
+              const deleteItem = prompt('削除する値は？');
+              if (arrary.includes(deleteItem)) {
+                arrary = arrary.filter(item => {
+                  return item !== deleteItem;
+                });
+                console.log('Item lists', arrary);
+                break;
+              } else {
+                alert('その値はありません。');
+              }
+            }
+            break;
+          case '3': //一覧表示
+            alert('保持している値をconsole.logで表示しました。');
+            console.log('Item lists', arrary);
+            break;
+
+          default:
+            alert('対象の処理はありません。もう１度、選んでください。');
+            break;
+        };
+      }
+    }
+  }
+</script>
+
+</html>
